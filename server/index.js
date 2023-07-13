@@ -8,7 +8,7 @@ dotenv.config();
 connectToMongoDB();
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 
