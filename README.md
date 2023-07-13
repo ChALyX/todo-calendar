@@ -2,7 +2,7 @@
 
 A React Todo app built using Vite and technologies like React, Tailwind CSS, react-big-calendar, react-datepicker, and date-fns.
 
-![Image of Todo Application](https://github.com/forreya/todo-calendar/app_image.png)
+![Image of Todo Application](https://github.com/forreya/todo-calendar/blob/main/app_image.png)
 
 ---
 
