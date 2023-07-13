@@ -2,6 +2,8 @@
 
 A React Todo app built using Vite and technologies like React, Tailwind CSS, react-big-calendar, react-datepicker, and date-fns.
 
+![Image of Todo Application](https://github.com/forreya/todo-calendar/app_image.png)
+
 ---
 
 ## URL to Web App
@@ -11,6 +13,35 @@ A React Todo app built using Vite and technologies like React, Tailwind CSS, rea
 ## About
 
 This React Todo Vite app allows users to manage todos on a calendar. Users can add new todos by providing a title and a date. The app provides a user-friendly interface for adding todos and displays them on the calendar.
+
+---
+
+## How to Install
+
+Follow the steps below to install and run the React Todo Vite app:
+
+1. Clone this repository to your local machine.
+2. Make sure you have Node.js and npm (Node Package Manager) installed.
+3. Open your terminal and navigate to the project's directory.
+4. Run the following command to install the dependencies (both client & server):
+
+```
+npm install
+```
+
+5. After the installation is complete, start the client
+
+```
+npm run dev
+```
+
+6. Start the server
+
+```
+npx nodemon index.js
+```
+
+6. The app should now be running on [http://localhost:5173](http://localhost:5173). Open this URL in your web browser to view the app.
 
 ---
 
