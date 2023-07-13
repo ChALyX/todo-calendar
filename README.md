@@ -6,9 +6,9 @@ A React Todo app built using Vite and technologies like React, Tailwind CSS, rea
 
 ---
 
-## URL to Web App (No Deployment Yet)
+## Deployment Link
 
-[Click here for GitHub repository link](https://github.com/forreya/todo-calendar.git)
+[Click here for Netlify Deployment link](https://todo-calendar-forreya.netlify.app/)
 
 ---
 
