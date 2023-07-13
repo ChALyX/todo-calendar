@@ -1,4 +1,4 @@
-# React Calendar Vite App
+# React Todo Calendar Vite App
 
 A React Todo app built using Vite and technologies like React, Tailwind CSS, react-big-calendar, react-datepicker, and date-fns.
 
