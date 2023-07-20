@@ -1,6 +1,10 @@
 # React Todo Calendar Vite App
 
-A React Todo app built using Vite and technologies like React, Tailwind CSS, react-big-calendar, react-datepicker, and date-fns. [Click here for Netlify Deployment link](https://todo-calendar-forreya.netlify.app/)
+A React Todo app built using Vite and technologies like React, Tailwind CSS, react-big-calendar, react-datepicker, and date-fns. 
+
+[Click here for Netlify Deployment link](https://todo-calendar-forreya.netlify.app/)
+
+---
 
 ![Image of Todo Application](https://github.com/forreya/todo-calendar/blob/main/app_image.png)
 
