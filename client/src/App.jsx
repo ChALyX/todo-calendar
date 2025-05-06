@@ -1,51 +1,36 @@
-import './App.css'
-import { Calendar } from 'react-big-calendar'
+import './App.css';
+import { Calendar } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import React, { useEffect, useState } from 'react'
-import ReactDatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
+import React, { useEffect, useState } from 'react';
+import ReactDatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import preDefinedTodos from './assets/predefinedTodos';
 import { localiser } from './locales/localeData';
 
 function App() {
-  const [newTodo, setNewTodo] = useState({ title: "", date: ""})
-  const [allTodos, setAllTodos] = useState(preDefinedTodos)
+  const [newTodo, setNewTodo] = useState({ title: "", date: "" });
+  const [allTodos, setAllTodos] = useState([]);
 
-  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000'
-
-  // Called when the user tries to create a new Todo
-  const handleCreateTodo = async (event) => {
-    event.preventDefault();
-    setAllTodos([...allTodos, newTodo])
-
-    // Send the newTodo data to server
-    const response = await fetch(`${BACKEND_URL}/create-todo`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newTodo),
-    })
-    // POST request successful
-    if (response.ok) {
-      alert('New Todo Created!');
+  // ✅ 从 localStorage 初始化
+  useEffect(() => {
+    const stored = localStorage.getItem('todos');
+    if (stored) {
+      setAllTodos(JSON.parse(stored));
+    } else {
+      setAllTodos(preDefinedTodos);
     }
-  }
+  }, []);
 
-  // Fetch all Todos from server when component mounts
-  useEffect(()=> {
-    fetch(`${BACKEND_URL}/all-todos`, {})
-    .then(response => response.json())
-    .then(data => {
-      if (!data || data.length === 0) {
-        console.log('No previous todos found.');
-      } else {
-        setAllTodos([...preDefinedTodos,...data]);
-      }
-    })
-  }, [])
+  // ✅ 添加任务并保存到 localStorage
+  const handleCreateTodo = (event) => {
+    event.preventDefault();
+    const updatedTodos = [...allTodos, newTodo];
+    setAllTodos(updatedTodos);
+    localStorage.setItem('todos', JSON.stringify(updatedTodos));
+    alert('New Todo Saved!');
+  };
 
-  return ( 
+  return (
     <div className="min-h-screen bg-richGreen text-gray-800 py-10 px-4">
       <h1 className="text-4xl font-bold mb-6 text-center">My Todo Calendar</h1>
       <h2 className="text-2xl font-semibold mb-4 text-center">Add A New Todo</h2>
@@ -78,7 +63,7 @@ function App() {
         className="h-screen my-10 bg-richGreen text-black"
       />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
